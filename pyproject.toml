@@ -13,7 +13,7 @@ artefacts = "1.0.0a1"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.plugins.pytest11]
-dbt_conventions = "pytest_dbt_conventions.plugin"
+dbt-conventions = "pytest_dbt_conventions.plugin"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

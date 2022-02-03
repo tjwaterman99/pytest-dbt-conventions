@@ -7,14 +7,12 @@ import artefacts
 def pytest_addoption(parser):
     group = parser.getgroup('dbt-conventions')
     group.addoption(
-        '--foo2',
+        '--foo',
         action='store',
         dest='dest_foo',
         default='2022',
         help='Set the value for the fixture "bar".'
     )
-
-    parser.addini('HELLO', 'Dummy pytest.ini setting')
 
 
 @pytest.fixture
