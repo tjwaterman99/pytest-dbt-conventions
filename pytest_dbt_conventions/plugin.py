@@ -18,3 +18,8 @@ def pytest_addoption(parser):
 @pytest.fixture
 def bar(request):
     return request.config.option.dest_foo
+
+
+@pytest.fixture
+def dbt_test_fixture():
+    return 'dbt-conventions!!!'
