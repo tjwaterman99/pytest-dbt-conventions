@@ -21,7 +21,7 @@ test = ["coverage (>=3.7.1)", "cssselect (>=0.9.1)", "lxml (>=3.6.0)", "nose (>=
 
 [[package]]
 name = "artefacts"
-version = "1.0.0a1"
+version = "1.0.0a2"
 description = "Deserialization for dbt artifacts"
 category = "main"
 optional = false
@@ -602,7 +602,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "aca80482535cd0fc422956f5bacbba296a633d752d9f820b848d38c472b1abd2"
+content-hash = "316e17aeeab13383f09e03dab938bf08374455490447f9cd2e0e2bd0e4b4d01c"
 
 [metadata.files]
 agate = [
@@ -610,8 +610,8 @@ agate = [
     {file = "agate-1.6.3.tar.gz", hash = "sha256:e0f2f813f7e12311a4cdccc97d6ba0a6781e9c1aa8eca0ab00d5931c0113a308"},
 ]
 artefacts = [
-    {file = "artefacts-1.0.0a1-py3-none-any.whl", hash = "sha256:a31daafda423f133a61fa6298386e8e32c5cb17eb07b025d3b6ff918ed1a9d60"},
-    {file = "artefacts-1.0.0a1.tar.gz", hash = "sha256:746871f836152b95ae9072bf4f81a1234da7429bd0ed8e7135693c0dc84749b7"},
+    {file = "artefacts-1.0.0a2-py3-none-any.whl", hash = "sha256:e238e312ebd730946b6481f118ce598aa1e003ec6fb9642eb4f035fb43d29000"},
+    {file = "artefacts-1.0.0a2.tar.gz", hash = "sha256:1e9b8110257f67e8ac1a8bb2eae9e83c46640b8737fbeefde738d51f92152a42"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},

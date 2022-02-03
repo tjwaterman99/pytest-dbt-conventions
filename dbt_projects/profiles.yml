@@ -1,0 +1,12 @@
+poffertjes_shop:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('PGHOST') }}"
+      password: "{{ env_var('PGPASSWORD') }}"
+      user: "{{ env_var('PGUSER') }}"
+      dbname: "{{ env_var('PGDATABASE') }}"
+      port: 5432
+      schema: "{{ env_var('PGSCHEMA') }}"
+      threads: 4
