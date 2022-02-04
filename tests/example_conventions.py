@@ -7,6 +7,7 @@ def test_conf(artefacts_conf):
 
 def test_manifest(manifest):
     assert manifest.name() == 'manifest'
+    assert len(manifest.nodes) > 0
 
 
 def test_catalog(catalog):
@@ -51,6 +52,7 @@ def test_macro(macro):
 
 def test_selector(selector):
     assert selector.resource_type == 'selector'
+    assert type(selector) == dict
 
 
 

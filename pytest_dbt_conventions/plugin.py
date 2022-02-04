@@ -81,7 +81,6 @@ def macro(request):
     yield request.param
 
 
-@pytest.fixture(scope='session', params=[v for v in artefacts.api.selectors()], ids=[k for k,v in artefacts.api.selectors()])
+@pytest.fixture(scope='session', params=[s for s in artefacts.api.selectors()], ids=[s['name'] for s in artefacts.api.selectors()])
 def selector(request):
     yield request.param
-
