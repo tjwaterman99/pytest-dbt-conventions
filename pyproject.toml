@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytest-dbt-conventions"
-version = "0.1.0"
+version = "0.1.1"
 description = "A pytest plugin for linting a dbt project's conventions"
 authors = ["Tom Waterman <tjwaterman99@gmail.com>"]
 license = "Apache 2.0"
