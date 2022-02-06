@@ -3,10 +3,6 @@ import os
 import pytest
 
 
-@pytest.fixture()
-def pwd():
-    return os.path.dirname(os.path.abspath(__file__))
-
 
 def test_all_fixtures(pwd, testdir):
     """Make sure that pytest accepts our fixtures."""
