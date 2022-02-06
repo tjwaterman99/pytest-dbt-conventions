@@ -1,10 +1,19 @@
 # -*- coding: utf-8 -*-
+import os
+import pytest
 
 
-def test_all_fixtures(testdir):
+@pytest.fixture()
+def pwd():
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+def test_all_fixtures(pwd, testdir):
     """Make sure that pytest accepts our fixtures."""
 
-    conventions_file = open('/workspaces/pytest-dbt-conventions/tests/example_conventions.py').read()
+    print(pwd)
+
+    conventions_file = open(os.path.join(pwd, 'example_conventions.py')).read()
 
     # create a temporary pytest test module
     testdir.makepyfile(conventions_file)
