@@ -1,7 +1,7 @@
 import os
 
 
-rootdir = os.path.join('..', os.getcwd())
+root_dir = os.path.join('..', os.getcwd())
 dbt_project_dir = os.path.join(root_dir, 'dbt_projects', 'poffertjes_shop')
 os.environ['DBT_PROJECT_DIR'] = dbt_project_dir
 
