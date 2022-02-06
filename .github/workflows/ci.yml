@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, add-ci ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PGHOST: "localhost"
+  PGPASSWORD: "password"
+  PGUSER: "poffertjes_shop"
+  PGDATABASE: "poffertjes_shop"
+  PGSCHEMA: "poffertjes_shop"
+  DBT_PROFILES_DIR: "/workspaces/pytest-dbt-conventions/dbt_projects"
+  DBT_PROJECT_DIR: "/workspaces/pytest-dbt-conventions/dbt_projects/poffertjes_shop"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python_version: ["3.8", "3.9", "3.10"]
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python version ${{ matrix.python_version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: "${{ matrix.python_version }}"
+    - name: Install dependencies
+      run: .devcontainer/postCreateCommand.sh
+    - name: Test with pytest
+      run: |
+        poetry run pytest
