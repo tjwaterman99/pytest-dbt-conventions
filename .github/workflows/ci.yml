@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, add-ci ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -13,6 +13,7 @@ env:
   PGDATABASE: "poffertjes_shop"
   PGSCHEMA: "public"
   DBT_PROFILES_DIR: "./dbt_projects"
+  DBT_PROJECT_DIR: "./dbt_projects/poffertjes_shop"
 
 jobs:
   build:
