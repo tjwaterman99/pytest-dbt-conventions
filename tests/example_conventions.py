@@ -51,7 +51,6 @@ def test_macro(macro):
 
 
 def test_selector(selector):
-    assert selector.resource_type == 'selector'
     assert type(selector) == dict
 
 
