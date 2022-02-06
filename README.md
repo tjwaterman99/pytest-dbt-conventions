@@ -1,4 +1,6 @@
-# `pytest-dbt-conventions`
+# pytest-dbt-conventions
+
+[![PyPI version](https://badge.fury.io/py/pytest-dbt-conventions.svg)](https://badge.fury.io/py/pytest-dbt-conventions) ![badge](https://img.shields.io/badge/dbt-%3E%3D1.0-orange?style=flat&logo=dbt) ![badge](https://img.shields.io/pypi/pyversions/artefacts?logo=python) 
 
 _A pytest plugin for linting a dbt project's conventions_
 
