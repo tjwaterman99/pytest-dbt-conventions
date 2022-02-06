@@ -1,6 +1,11 @@
 import os
 
 
+rootdir = os.path.join('..', os.getcwd())
+dbt_project_dir = os.path.join(root_dir, 'dbt_projects', 'poffertjes_shop')
+os.environ['DBT_PROJECT_DIR'] = dbt_project_dir
+
+
 def test_conf(artefacts_conf):
     assert artefacts_conf._dbt_project_dir == os.environ['DBT_PROJECT_DIR']
 

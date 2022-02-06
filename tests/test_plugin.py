@@ -11,7 +11,7 @@ def pwd():
 def test_all_fixtures(pwd, testdir):
     """Make sure that pytest accepts our fixtures."""
 
-    print(pwd)
+    print('!!!!', pwd)
 
     conventions_file = open(os.path.join(pwd, 'example_conventions.py')).read()
 
