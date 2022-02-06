@@ -10,6 +10,8 @@ sudo -u postgres createdb $PGDATABASE -O $PGUSER
 pipx install poetry
 poetry install
 
+git submodule update --init
+
 poetry run dbt deps --project-dir dbt_projects/poffertjes_shop
 poetry run dbt build --project-dir dbt_projects/poffertjes_shop
 poetry run dbt docs generate --project-dir dbt_projects/poffertjes_shop
