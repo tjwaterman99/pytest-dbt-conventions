@@ -1,13 +1,6 @@
 import os
 
 
-if 'CI' in os.environ:
-    os.environ['DBT_PROJECT_DIR'] = os.path.join(
-        os.environ['GITHUB_WORKSPACE'],
-        os.environ['DBT_PROJECT_DIR']
-    )
-
-
 def test_conf(artefacts_conf):
     assert artefacts_conf._dbt_project_dir == os.environ['DBT_PROJECT_DIR']
 
