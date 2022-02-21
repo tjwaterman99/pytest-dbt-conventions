@@ -7,7 +7,7 @@
 _A pytest plugin for linting a dbt project's conventions_
 
 ```
-pip install pytest pytest-dbt-conventions
+pip install pytest-dbt-conventions
 ```
 
 For a demo project using this linter, please see the `conventions.py` file of the [`poffertjes_shop`](https://github.com/tjwaterman99/poffertjes_shop) project.
