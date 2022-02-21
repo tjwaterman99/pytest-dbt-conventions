@@ -55,4 +55,9 @@ def test_selector(selector):
     assert type(selector) == dict
 
 
+def test_operation(operation):
+    assert operation.resource_type == 'operation'
 
+
+def test_snapshot(snapshot):
+    assert snapshot.resource_type == 'snapshot'
