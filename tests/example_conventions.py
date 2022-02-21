@@ -1,4 +1,5 @@
 import os
+from artefacts import Manifest, Sources, RunResults, Catalog
 
 
 def test_conf(artefacts_conf):
@@ -6,20 +7,20 @@ def test_conf(artefacts_conf):
 
 
 def test_manifest(manifest):
-    assert manifest.name() == 'manifest'
+    assert type(manifest) == Manifest.model
     assert len(manifest.nodes) > 0
 
 
 def test_catalog(catalog):
-    assert catalog.name() == 'catalog'
+    assert type(catalog) == Catalog.model
 
 
 def test_sources(sources):
-    assert sources.name() == 'sources'
+    assert type(sources) == Sources.model
 
 
 def test_run_results(run_results):
-    assert run_results.name() == 'run_results'
+    assert type(run_results) == RunResults.model
 
 
 def test_model(model):

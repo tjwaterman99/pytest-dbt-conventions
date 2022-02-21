@@ -2,8 +2,8 @@ import os
 
 import pytest
 
-from artefacts.config import conf
-from artefacts.core import Manifest, RunResults, Sources, Catalog
+from artefacts.config import Config
+from artefacts import Manifest, RunResults, Sources, Catalog
 import artefacts.api
 
 
@@ -23,27 +23,27 @@ import artefacts.api
 
 @pytest.fixture(scope='session')
 def artefacts_conf(request):
-    return conf
+    return Config()
 
 
 @pytest.fixture(scope='session')
 def manifest(artefacts_conf):
-    return Manifest.load()
+    return Manifest()
 
 
 @pytest.fixture(scope='session')
 def run_results(artefacts_conf):
-    return RunResults.load()
+    return RunResults()
 
 
 @pytest.fixture(scope='session')
 def catalog(artefacts_conf):
-    return Catalog.load()
+    return Catalog()
 
 
 @pytest.fixture(scope='session')
 def sources(artefacts_conf):
-    return Sources.load()    
+    return Sources()    
 
 
 @pytest.fixture(scope='session', params=artefacts.api.models(), ids=[m.unique_id for m in artefacts.api.models()])
