@@ -109,7 +109,7 @@ def test_models_have_descriptions(model):
 
 ## Configuration
 
-The behavior of the conventions linter can be configured by calling pytest with optional parameters. To see all available options, use `pytest --help` and search for the section "pytest-dbt-conventions".
+The behavior of the conventions linter can be configured by calling pytest with optional parameters. To see all available options, use `pytest --help` and search for the section "dbt-conventions".
 
 #### Specifying the dbt package to lint against
 
