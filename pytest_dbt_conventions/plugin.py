@@ -22,9 +22,8 @@ def pytest_addoption(parser):
 
     group.addoption(
         '--include-disabled',
-        action=argparse.BooleanOptionalAction,
+        action='store_true',
         dest='artefacts_include_disabled',
-        default=False,
         help='Whether to test against disabled resources.'
     )
 

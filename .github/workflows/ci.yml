@@ -33,4 +33,4 @@ jobs:
       run: .devcontainer/postCreateCommand.sh
     - name: Test with pytest
       run: |
-        poetry run pytest
+        poetry run pytest --include-disabled --package-name poffertjes_shop
