@@ -8,7 +8,7 @@ license = "Apache 2.0"
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest = "^6.2.5"
-artefacts = "^1.1.0"
+artefacts = "1.2.0"
 
 [tool.poetry.dev-dependencies]
 dbt-core = "^1.0.1"
