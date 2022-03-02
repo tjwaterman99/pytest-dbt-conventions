@@ -12,6 +12,15 @@ pip install pytest-dbt-conventions
 
 For a demo dbt project using this linter, please see the [`conventions.py`](https://github.com/tjwaterman99/poffertjes_shop/blob/main/conventions.py) file of the [poffertjes_shop](https://github.com/tjwaterman99/poffertjes_shop) project.
 
+## Contents
+
+- [Quickstart](https://github.com/tjwaterman99/pytest-dbt-conventions#quickstart)
+- [Using fixtures](https://github.com/tjwaterman99/pytest-dbt-conventions#using-fixtures)
+- [Allowing exceptions](https://github.com/tjwaterman99/pytest-dbt-conventions#allowing-exceptions)
+- [Configuration](https://github.com/tjwaterman99/pytest-dbt-conventions#configuration)
+- [Creating custom fixtures](https://github.com/tjwaterman99/pytest-dbt-conventions#creating-custom-fixtures)
+- [Reference](https://github.com/tjwaterman99/pytest-dbt-conventions#reference)
+
 ## Quickstart
 
 This plugin allows you to lint the conventions of your dbt project using pytest. Linting conventions helps ensure your project follows best practices, however you choose to define them.
@@ -70,9 +79,11 @@ def test_sources_have_snapshots(source):
     assert len(source.snapshots) > 0
 ```
 
-The `pytest-dbt-conventions` plugin provides several fixtures that you can use. For a full list of available fixtures, please see the [reference]() section below.
+The `pytest-dbt-conventions` plugin provides several fixtures that you can use. For a full list of available fixtures, please see the [reference](https://github.com/tjwaterman99/pytest-dbt-conventions#reference) section below.
 
-It's also possible to create your own fixtures. Please see the section [creating fixtures]() for more details.
+Most of the fixtures represent a single type of resource in your dbt project. For example, the fixture `source` represents a [dbt source](https://docs.getdbt.com/docs/building-a-dbt-project/using-sources) in your project. 
+
+Note that pytest will apply any test that uses the `source` fixture to _every_ source defined in your project. To apply a test to only a subset of resources, please see the section [creating custom fixtures](https://github.com/tjwaterman99/pytest-dbt-conventions#creating-custom-fixtures).
 
 ## Allowing exceptions
 
@@ -96,6 +107,31 @@ def test_models_have_descriptions(model):
 
 ```
 
+## Configuration
+
+The behavior of the conventions linter can be configured by calling pytest with optional parameters. To see all available options, use `pytest --help` and search for the section "pytest-dbt-conventions".
+
+#### Specifying the dbt package to lint against
+
+Specifying a package name allows you to skip running the linter against any installed dbt packages.
+
+```
+pytest conventions.py --package-name poffertjes_shop
+```
+
+#### Specifying the directory of a dbt project
+
+```
+pytest conventions.py --dbt-project-dir $PWD
+```
+
+#### Including disabled nodes
+
+By default the linter will skipped nodes that have been disabled. To lint the disabled nodes, use `--include-disabled`.
+
+```
+pytest conventions.py --include-disabled
+```
 
 ## Creating Custom Fixtures
 
