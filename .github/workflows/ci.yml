@@ -13,7 +13,6 @@ env:
   PGDATABASE: "poffertjes_shop"
   PGSCHEMA: "public"
   DBT_PROFILES_DIR: "/home/runner/work/pytest-dbt-conventions/pytest-dbt-conventions/dbt_projects"
-  DBT_PROJECT_DIR: "/home/runner/work/pytest-dbt-conventions/pytest-dbt-conventions/dbt_projects/poffertjes_shop"
 
 jobs:
   build:
@@ -33,4 +32,4 @@ jobs:
       run: .devcontainer/postCreateCommand.sh
     - name: Test with pytest
       run: |
-        poetry run pytest --include-disabled --package-name poffertjes_shop
+        poetry run pytest --include-disabled --package-name poffertjes_shop --dbt-project-dir $PWD/dbt_projects/poffertjes_shop
