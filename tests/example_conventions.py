@@ -1,9 +1,10 @@
+import pytest
 import os
 from artefacts import Manifest, Sources, RunResults, Catalog
 
 
-def test_conf(artefacts_conf):
-    assert artefacts_conf._dbt_project_dir == os.environ['DBT_PROJECT_DIR']
+def test_config(artefacts_config):
+    assert os.path.abspath(artefacts_config.get('dbt_project_dir')) == os.environ['ARTEFACTS_DBT_PROJECT_DIR']
 
 
 def test_manifest(manifest):
